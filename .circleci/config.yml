@@ -5,6 +5,8 @@ jobs:
       - image: circleci/python2.7
     steps:
       - checkout:
+      # Login to docker
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
           name: Python test
           command:
