@@ -6,7 +6,10 @@ jobs:
     steps:
       - checkout:
       # Login to docker
-      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Install requirements
+          command:
+            pip install -r requirements.txt
       - run:
           name: Python test
           command:
