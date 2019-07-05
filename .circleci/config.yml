@@ -1,0 +1,13 @@
+version: 2.0
+jobs:
+  test:
+    docker:
+      - image: circleci/python2.7
+    steps:
+      - checkout:
+      - run:
+          name: Python test
+          command:
+            python tests.py
+      - store_test_results:
+          path: build/test-results
