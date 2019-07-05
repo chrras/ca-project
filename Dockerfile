@@ -10,7 +10,7 @@ RUN apt-get update -y && apt-get install -y \
 	python-pip
 RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
-COPY app .
+COPY . .
 COPY run.py .
 
 # Add a default port containers from this image should expose
